@@ -6,6 +6,7 @@
 			var video = " ";
 			var paginator = " ";
 			var firstPag = "";
+
 				$.ajax({
 					  type: "POST",
 					  url: "app/videolist.php",
@@ -17,7 +18,6 @@
 								video = $(this).attr("value");
 								$(".monitor").html("<iframe width='500px' height='300px' src='"+video+"?rel=0&border=&autoplay=1' allowfullscreen></iframe>");
 								$(".monitor").show();
-								
 							});
 						});
 
@@ -99,8 +99,6 @@
 							});
 					});
 				}); //end country
-			
-
 			//pagination
 				$(".paginist").on("click", function(){
 					var valLi = parseInt($("li").attr("value")); 

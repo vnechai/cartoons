@@ -2,7 +2,7 @@
 	if (isset($_REQUEST['age'])) {$age = $_REQUEST['age'];} else {$age = "%";}
 	if (isset($_REQUEST['country'])) {$country = $_REQUEST['country'];} else {$country = "%";}
 	if (isset($_REQUEST['gender'])) {$gender = $_REQUEST['gender'];} else {$gender = "%";}
-	
+
 	$link = mysqli_connect("localhost", "root", "321", "cartoon");
 	/* check connection */
 	if (mysqli_connect_errno()) {
@@ -37,15 +37,16 @@
 		AND gender LIKE '$gender' 
 		AND country LIKE '$country'
 		ORDER BY id DESC");
-
 		while ($myrow = mysqli_fetch_array($result)){
 			//choose top age
 			$ageVegeryficator =  $myrow["ageTop"] - $age;
 			$myage = $age - $myrow['ageBottom'];
 			 if ($ageVegeryficator >= 0 && $myage >= 0 || $age == "%"){
+
 				echo "<li class='allCartoons' value='".$paginLast."'><div class='linkR' value=".$myrow['link'].">".$myrow['cartoon']."</div></li>";
 			}
 		}
 		var_dump($paginFirst);
 		var_dump($paginLast);
+
 ?>
