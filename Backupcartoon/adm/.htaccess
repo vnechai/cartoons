@@ -1,4 +1,0 @@
-AuthName "Введите пароль для входа"
-AuthType Basic
-AuthUserFile /var/www/html/cartoons/adm/.htpasswd
-require valid-user

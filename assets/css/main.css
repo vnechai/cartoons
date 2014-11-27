@@ -94,6 +94,13 @@ li {
 .lister{
 	height: 200px;
 }
+.pagination{
+	text-align: center;
+}
+.paginist{
+	display: inline;
+	width:33px;
+}
 .monitor{
 	margin-top:20px;
 	float: right;

@@ -36,6 +36,10 @@
 		<div class="list">
 			<div class="lister">
 				<ul class="listResult"></ul>
+				<div class="pagination">
+					<div class="paginist" value="-4" ><img id="left" src="assets/img/pagination/left.png" hidden></div>
+					<div class="paginist" value="4"><img id="right" src="assets/img/pagination/right.png"></div>
+				</div>
 			</div>
 			<div class="monitor" hidden></div>
 		</div>

@@ -4,17 +4,20 @@
 			var countryVerificator = "%";
 			var genderVerificator = "%";
 			var video = " ";
-
+			var paginator = " ";
+			var firstPag = "";
 				$.ajax({
 					  type: "POST",
 					  url: "app/videolist.php",
 					}).done( function (msg) {
 							$('.listResult').empty();
 							$('.listResult').prepend(msg);
+							firstPag = parseInt($("li").attr("value")); //last row in base
 							$(".linkR").click( function(){
 								video = $(this).attr("value");
-								$(".monitor").html("<iframe width='560' height='315' src='"+video+"' allowfullscreen></iframe>'");
+								$(".monitor").html("<iframe width='500px' height='300px' src='"+video+"?rel=0&border=&autoplay=1' allowfullscreen></iframe>");
 								$(".monitor").show();
+								
 							});
 						});
 
@@ -39,7 +42,7 @@
 							$('.listResult').prepend(msg);
 							$(".linkR").click( function(){
 								video = $(this).attr("value");
-								$(".monitor").html("<embed width='560' height='315' src='"+video+"'allowfullscreen></embed>'");
+								$(".monitor").html("<iframe width='500px' height='300px' src='"+video+"?rel=0&border=&autoplay=1' allowfullscreen></iframe>");
 								$(".monitor").show();
 							});
 						});
@@ -65,7 +68,7 @@
 							$('.listResult').prepend(msg);
 							$(".linkR").click( function(){
 								video = $(this).attr("value");
-								$(".monitor").html("<embed width='560' height='315' src='"+video+"'allowfullscreen></embed>'");
+								$(".monitor").html("<iframe width='500px' height='300px' src='"+video+"?rel=0&border=&autoplay=1' allowfullscreen></iframe>");
 								$(".monitor").show();
 						});
 				});
@@ -91,9 +94,41 @@
 								$('.listResult').prepend(msg);
 								$(".linkR").click( function(){
 									video = $(this).attr("value");
-									$(".monitor").html("<embed width='560' height='315' src='"+video+"'allowfullscreen></embed>'");
+									$(".monitor").html("<iframe width='500px' height='300px' src='"+video+"?rel=0&border=&autoplay=1' allowfullscreen></iframe>");
 									$(".monitor").show();
 							});
 					});
 				}); //end country
+			
+
+			//pagination
+				$(".paginist").on("click", function(){
+					var valLi = parseInt($("li").attr("value")); 
+					if ($(this).attr("value") > 0){
+						paginator = valLi;//left
+						$('#left').show();
+					}
+					else {paginator = parseInt($("li").attr("value")) + firstPag + 1; //right
+						 $('#right').show();
+						 }
+					if (paginator > firstPag){
+						$('#left').hide();
+					}
+					if (paginator <= firstPag){
+						$('#right').hide();
+					}
+				$.ajax({
+						  type: "POST",
+						  url: "app/videolist.php",
+						  data: { pag: paginator, age: ageVerificator, country: countryVerificator, gender: genderVerificator  }
+						}).done( function (msg) {
+								$('.listResult').empty();
+								$('.listResult').prepend(msg);
+								$(".linkR").click( function(){
+									video = $(this).attr("value");
+									$(".monitor").html("<iframe width='500px' height='300px' src='"+video+"?rel=0&border=&autoplay=1' allowfullscreen></iframe>");
+									$(".monitor").show();
+							});
+					});
+				}); //end pagination
 		});
