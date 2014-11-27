@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Comic Relief';
+    src: url('comicrelief.eot');
+    src: url('comicrelief.eot?#iefix') format('embedded-opentype'),
+         url('comicrelief.woff') format('woff'),
+         url('comicrelief.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

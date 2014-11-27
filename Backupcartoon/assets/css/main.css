@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Comic Relief';
+    src: url('comicrelief.eot');
+    src: url('comicrelief.eot?#iefix') format('embedded-opentype'),
+         url('comicrelief.woff') format('woff'),
+         url('comicrelief.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: italic;
+}
+body{
+	font-family: 'Comic Relief';
+	margin: auto;
+	padding: auto;
+	
+ }
+
+.wrap{
+	min-width: 1200px;
+	min-height: 700px;
+	height:100%;
+	background-image: url(../img/wjZCbu6TUHc.jpg);
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*asks */
+.asks{
+	float: right; 
+	display: block;
+	width: 405px;
+}
+.age{
+	float: left;
+}
+.ageChield{
+	display: inline-block;
+	cursor: pointer;
+	opacity: 0.8;
+	margin-left: 10px;
+}
+.country{
+	float: left;
+	height: 100px;
+}
+.countryChield{
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 40px;
+	opacity: 0.8;
+	width: 72px;
+	height: 55px;
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0px solid black;
+}
+.countryChield:hover{
+	box-shadow: 0 0 10px black; 
+	opacity: 1;
+
+}
+#ru{
+	background-image: url(../img/flag/ru.png);
+}
+#japan{
+	background-image: url(../img/flag/japan.png);
+}
+#usa{
+	background-image: url(../img/flag/usa.png);
+}
+.gender{
+	float: right;
+}
+.genderChield{
+	cursor: pointer;
+	float: left;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+li {
+	list-style-type: none;
+}
+.list{
+	float: right;
+	margin-top: 20px;
+	width: 400px;
+}
+
+.linkR{
+	cursor: pointer;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.lister{
+	height: 200px;
+}
+.monitor{
+	margin-top:20px;
+	float: right;
+}
+ 
